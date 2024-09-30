@@ -28,7 +28,7 @@ library(reshape2)
 
 ## Importing Datasets
 ```{r}
-amazon_sales <- read_csv("Amazon Sales data.csv")
+amazon_sales <- read_csv("[Amazon Sales data.csv](https://github.com/AkankshaPanwar/Amazon-Sales-Data-Analysis/blob/f503bd68a0784475f7a7e5860fe2bd92efe3ced8/Amazon%20Sales%20data.csv)")
 ```
 
 # Cleaning Process:
