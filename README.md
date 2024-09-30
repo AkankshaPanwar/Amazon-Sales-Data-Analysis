@@ -47,6 +47,7 @@ amazon_sales$sales_channel <- as.factor(amazon_sales$sales_channel)
 amazon_sales$order_priority <- as.factor(amazon_sales$order_priority)
 unique(amazon_sales$order_priority)
 ```
+![glimpse](https://github.com/user-attachments/assets/06be16fc-64d4-4326-ad5d-fd12e1a48f8d)
 
 Checking if there are any incomplete cases or missing data
 ```{r}
