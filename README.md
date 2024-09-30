@@ -53,11 +53,13 @@ Checking if there are any incomplete cases or missing data
 ```{r}
 amazon_sales %>% filter(!complete.cases(.))
 ```
+![incomplete cases](https://github.com/user-attachments/assets/5ad432ed-5cae-40d9-93ee-27ad9120a9f9)
 
 Checking duplicated data 
 ```{r}
 amazon_sales[duplicated(amazon_sales), ]
 ```
+![duplicate data](https://github.com/user-attachments/assets/49a1ccb2-3447-420b-92fe-aacff7af5249)
 
 # Analysing Data:
 
@@ -72,6 +74,7 @@ amazon_sales %>% select(units_sold, unit_price, unit_cost, total_revenue, total_
 n_distinct(amazon_sales$country)
 n_distinct(amazon_sales$item_type)
 ```
+![summary and ndistinct](https://github.com/user-attachments/assets/9af1f335-ed82-4a6a-ab4b-b8d6650e5b09)
 
 - Amazon has shipped to 76 countries and the the items sold are categorized into 12 different types.
 
@@ -80,6 +83,8 @@ amazon_sales$days_before_shipped <- amazon_sales$ship_date - amazon_sales$order_
 amazon_sales$days_before_shipped <- as.numeric(amazon_sales$days_before_shipped)
 amazon_sales %>% select(days_before_shipped) %>% summary()
 ```
+![days before ship summary](https://github.com/user-attachments/assets/b0aa244e-1d63-45ee-9a31-5b6e4e8da048)
+
 - Amazon took 23 days on an average to ship an item
 
 ## Creating visualizations
@@ -94,6 +99,8 @@ amazon_sales %>% ggplot(aes(region, units_sold)
         x = "Region",
         y = "Units Sold")
 ```
+![Units Sold per region](https://github.com/user-attachments/assets/60a58903-1cda-4978-b367-ca680481596b)
+
 ```{r}
 amazon_sales %>% ggplot(aes(order_date, total_profit/units_sold,
                              colour = sales_channel))+
@@ -103,6 +110,7 @@ amazon_sales %>% ggplot(aes(order_date, total_profit/units_sold,
      labs(title = "Profit over the years", x = "Year", y = "Average Profit")+
      theme_bw()
 ```
+![Profit over the years](https://github.com/user-attachments/assets/018b743f-08cf-4a28-9eb3-84c1a678e2a4)
 
 ```{r}
 amazon_sales %>% ggplot(aes(days_before_shipped, region))+
@@ -111,6 +119,8 @@ amazon_sales %>% ggplot(aes(days_before_shipped, region))+
      theme_light()+
      labs(title = "Shipping time", x = "Days before items are shipped", y = "Region")
 ```
+![Shipping time](https://github.com/user-attachments/assets/597e3a3f-ffc4-4d9b-84f1-cad489ef5e80)
+
 
 # Conclusion
 
